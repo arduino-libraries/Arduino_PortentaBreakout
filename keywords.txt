@@ -6,7 +6,7 @@
 
 BreakoutCarrierClass	KEYWORD1
 Breakout	KEYWORD1
-
+breakoutPin	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
