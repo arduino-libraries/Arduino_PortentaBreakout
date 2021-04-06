@@ -189,6 +189,12 @@ public:
         }
         return -1;
     }
+    void analogWrite(breakoutPin pin, int val){
+        if (pin > -1) {
+            ::analogWrite((int)pin, val);
+        }
+        return;
+    }
     MbedI2C I2C_0;
     MbedI2C I2C_1;
     MbedI2C I2C_2;
