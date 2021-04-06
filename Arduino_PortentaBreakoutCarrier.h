@@ -192,9 +192,17 @@ public:
     MbedI2C I2C_0;
     MbedI2C I2C_1;
     MbedI2C I2C_2;
+    UART UART0;
+    UART UART1;
+    UART UART2;
+    UART UART3;
     BreakoutCarrierClass() : I2C_0(PH_8,PH_7),
                              I2C_1(PB_7,PB_6),
-                             I2C_2(PH_12,PH_11)
+                             I2C_2(PH_12,PH_11),
+                             UART0(PA_0, PI_9, PI_10, PI_13),
+                             UART1(PA_9, PA_10, PI_14, PI_15),
+                             UART2(PI_0, PG_9, NC, NC),
+                             UART3(PJ_8, PJ_9, NC, NC)
     {
     }
 };
