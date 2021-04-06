@@ -10,6 +10,10 @@ breakoutPin	KEYWORD1
 I2C_0	KEYWORD1
 I2C_1	KEYWORD1
 I2C_2	KEYWORD1
+UART0	KEYWORD1
+UART1	KEYWORD1
+UART2	KEYWORD1
+UART3	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
