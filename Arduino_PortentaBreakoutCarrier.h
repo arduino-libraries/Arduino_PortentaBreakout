@@ -29,6 +29,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #include <Arduino.h>
 #include <pins_arduino.h>
 #include <mbed.h>
+#include "Wire.h"
 
 #define LAST_ARDUINO_PIN_NUMBER LEDB + 1
 typedef enum {
@@ -187,6 +188,14 @@ public:
             return ::digitalRead((int)pin);
         }
         return -1;
+    }
+    MbedI2C I2C_0;
+    MbedI2C I2C_1;
+    MbedI2C I2C_2;
+    BreakoutCarrierClass() : I2C_0(PH_8,PH_7),
+                             I2C_1(PB_7,PB_6),
+                             I2C_2(PH_12,PH_11)
+    {
     }
 };
 
