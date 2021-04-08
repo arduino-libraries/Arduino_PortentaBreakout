@@ -30,6 +30,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #include <pins_arduino.h>
 #include <mbed.h>
 #include "Wire.h"
+#include "utility/portentaBreakoutAnalog.h"
 
 #define LAST_ARDUINO_PIN_NUMBER LEDB + 1
 typedef enum {
@@ -167,6 +168,7 @@ typedef enum {
     USB_EN = -1
 } breakoutPin;
 
+
 class BreakoutCarrierClass {
 public:
     int pinMode(breakoutPin pin, PinMode mode) {
@@ -191,7 +193,7 @@ public:
     }
     void analogWrite(breakoutPin pin, int val){
         if (pin > -1) {
-            ::analogWrite((int)pin, val);
+            BreakoutPWM::analogWrite((int)pin, val);
         }
         return;
     }
