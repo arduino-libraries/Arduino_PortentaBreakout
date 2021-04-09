@@ -185,13 +185,13 @@ public:
         }
         return -1;
     }
-    bool digitalRead(breakoutPin pin){
+    bool digitalRead(breakoutPin pin) {
         if (pin > -1) {
             return ::digitalRead((int)pin);
         }
         return -1;
     }
-    void analogWrite(breakoutPin pin, int val){
+    void analogWrite(breakoutPin pin, int val) {
         if (pin > -1) {
             BreakoutPWM::analogWrite((int)pin, val);
         }
