@@ -197,6 +197,12 @@ public:
         }
         return;
     }
+    int analogRead(breakoutPin pin) {
+        if (pin > -1) {
+            return ::analogRead((int)pin);
+        }
+        return -1;
+    }
     MbedI2C I2C_0;
     MbedI2C I2C_1;
     MbedI2C I2C_2;
