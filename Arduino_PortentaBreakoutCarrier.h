@@ -30,6 +30,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #include <pins_arduino.h>
 #include <mbed.h>
 #include "Wire.h"
+#include "SPI.h"
 #include "utility/portentaBreakoutAnalog.h"
 
 #define LAST_ARDUINO_PIN_NUMBER LEDB + 1
@@ -210,13 +211,15 @@ public:
     UART UART1;
     UART UART2;
     UART UART3;
+    MbedSPI SPI_2;
     BreakoutCarrierClass() : I2C_0(PH_8,PH_7),
                              I2C_1(PB_7,PB_6),
                              I2C_2(PH_12,PH_11),
                              UART0(PA_0, PI_9, NC/*PI_10*/, NC/*PI_13*/),
                              UART1(PA_9, PA_10, NC/*PI_14*/, NC/*PI_15*/),
                              UART2(PG_14, PG_9, NC, NC),
-                             UART3(PJ_8, PJ_9, NC, NC)
+                             UART3(PJ_8, PJ_9, NC, NC),
+                             SPI_2(PC_2, PC_3, PI_1)
     {
     }
 };
