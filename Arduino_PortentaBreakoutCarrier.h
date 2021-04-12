@@ -200,7 +200,36 @@ public:
     }
     int analogRead(breakoutPin pin) {
         if (pin > -1) {
-            return ::analogRead((int)pin);
+            int val;
+            switch(pin) {
+            case ANALOG_A7:
+                val = A7;
+                break;
+            case ANALOG_A6:
+                val = A6;
+                break;
+            case ANALOG_A5:
+                val = A5;
+                break;
+            case ANALOG_A4:
+                val = A4;
+                break;
+            case ANALOG_A3:
+                val = A3;
+                break;
+            case ANALOG_A2:
+                val = A2;
+                break;
+            case ANALOG_A1:
+                val = A1;
+                break;
+            case ANALOG_A0:
+                val = A0;
+                break;
+            default:
+                return -1;
+            }
+            return ::analogRead(val);
         }
         return -1;
     }
