@@ -145,8 +145,6 @@ public:
         if (pulse > 100) {
             pulse = 100;
         }
-        Serial.println(pulse);
-        
         sConfig_compare.CompareValue = (sConfig_time_base.Period * pulse);
         if (HAL_HRTIM_WaveformCompareConfig(&HrtimHandle, HRTIM_TIMERINDEX_TIMER_E, HRTIM_COMPAREUNIT_2, &sConfig_compare) != HAL_OK)
         {
