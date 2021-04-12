@@ -236,6 +236,9 @@ public:
         }
         return -1;
     }
+    void analogReadResolution(int bits) {
+        ::analogReadResolution(bits);
+    }
     MbedI2C I2C_0;
     MbedI2C I2C_1;
     MbedI2C I2C_2;
