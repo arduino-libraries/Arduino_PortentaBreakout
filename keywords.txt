@@ -14,6 +14,7 @@ UART0	KEYWORD1
 UART1	KEYWORD1
 UART2	KEYWORD1
 UART3	KEYWORD1
+SPI_0	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
