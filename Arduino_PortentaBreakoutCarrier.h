@@ -198,6 +198,9 @@ public:
         }
         return;
     }
+    void analogWriteResolution(int bits) {
+        BreakoutPWM::analogWriteResolution(bits);
+    }
     int analogRead(breakoutPin pin) {
         if (pin > -1) {
             int val;
