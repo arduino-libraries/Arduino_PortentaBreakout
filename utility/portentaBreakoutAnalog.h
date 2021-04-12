@@ -175,5 +175,6 @@ private:
 
 
 void analogWrite(pin_size_t pin, int value);
+void analogWriteResolution(int bits);
 
 }
