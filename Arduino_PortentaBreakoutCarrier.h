@@ -246,7 +246,7 @@ public:
     UART UART1;
     UART UART2;
     UART UART3;
-    MbedSPI SPI_2;
+    MbedSPI SPI_0;
     BreakoutCarrierClass() : I2C_0(PH_8,PH_7),
                              I2C_1(PB_7,PB_6),
                              I2C_2(PH_12,PH_11),
@@ -254,7 +254,7 @@ public:
                              UART1(PA_9, PA_10, NC/*PI_14*/, NC/*PI_15*/),
                              UART2(PG_14, PG_9, NC, NC),
                              UART3(PJ_8, PJ_9, NC, NC),
-                             SPI_2(PC_2, PC_3, PI_1)
+                             SPI_0(PC_2, PC_3, PI_1)
     {
     }
 };
