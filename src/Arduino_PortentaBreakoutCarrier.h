@@ -35,6 +35,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #include <Portenta_Ethernet.h>
 #include <Ethernet.h>
 #include "utility/Analog/Analog.h"
+#include "utility/RTC/RTC.h"
 
 #define LAST_ARDUINO_PIN_NUMBER LEDB + 1
 typedef enum {
@@ -252,6 +253,7 @@ public:
     MbedSPI SPI_0;
     PDMClass PDM;
     arduino::EthernetClass Ethernet;
+    HWClock RTClock;
     BreakoutCarrierClass() : I2C_0(PH_8,PH_7),
                              I2C_1(PB_7,PB_6),
                              I2C_2(PH_12,PH_11),
@@ -261,7 +263,8 @@ public:
                              UART3(PJ_8, PJ_9, NC, NC),
                              SPI_0(PC_2, PC_3, PI_1),
                              PDM(PB_2, PE_2, NC),
-                             Ethernet()
+                             Ethernet(),
+                             RTClock()
     {
     }
 };
