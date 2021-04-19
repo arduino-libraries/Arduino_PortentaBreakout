@@ -29,8 +29,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #include <Arduino.h>
 #include <pins_arduino.h>
 #include <mbed.h>
-#include "Wire.h"
-#include "SPI.h"
+#include <Wire.h>
+#include <SPI.h>
 #include "utility/Analog/portentaBreakoutAnalog.h"
 
 #define LAST_ARDUINO_PIN_NUMBER LEDB + 1
