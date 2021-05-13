@@ -2,7 +2,7 @@
 
 Arduino Library for the Arduino Portenta Breakout Carrier
 
-For more information about this library please visit us at https://www.arduino.cc/en/Reference/PortentaBreakoutCarrier
+For more information about this library please visit us at https://www.arduino.cc/en/Reference/Arduino_PortentaBreakoutCarrier
 
 == License ==
 
@@ -23,8 +23,8 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
-#ifndef _BREAKOUT_CARRIER_H
-#define _BREAKOUT_CARRIER_H
+#ifndef ARDUINO_PORTENTA_BREAKOUT_CARRIER_H
+#define ARDUINO_PORTENTA_BREAKOUT_CARRIER_H
 
 #include "Arduino.h"
 #include "pins_arduino.h"
@@ -192,4 +192,4 @@ public:
 
 BreakoutCarrierClass Breakout;
 
-#endif // _BREAKOUT_CARRIER_H
+#endif // ARDUINO_PORTENTA_BREAKOUT_CARRIER_H
