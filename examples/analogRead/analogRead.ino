@@ -9,7 +9,7 @@
 
   This example code is in the public domain.
 */
-#include "PortentaBreakoutCarrier.h"
+#include "Arduino_PortentaBreakoutCarrier.h"
 
 const byte ANALOG_PIN_NUMBER = 8;
 const int ANALOG_RESOLUTION = 16;
