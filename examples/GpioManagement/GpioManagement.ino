@@ -11,7 +11,7 @@
 
   This example code is in the public domain.
 */
-#include "Arduino_PortentaBreakoutCarrier.h"
+#include <Arduino_PortentaBreakoutCarrier.h>
 
 // The macros to access each GPIO are made using the peripheral silk name
 // and the pin name (e.g. the GPIO 0 pin can be accessed using
