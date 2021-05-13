@@ -1,6 +1,7 @@
 # Portenta Breakout Carrier Library for Arduino
 
 [![Check Arduino status](https://github.com/arduino-libraries/Arduino_PortentaBreakoutLibrary/actions/workflows/check-arduino.yml/badge.svg)](https://github.com/arduino-libraries/Arduino_PortentaBreakoutLibrary/actions/workflows/check-arduino.yml)
+[![Spell Check status](https://github.com/arduino-libraries/Arduino_PortentaBreakoutLibrary/actions/workflows/spell-check.yml/badge.svg)](https://github.com/arduino-libraries/Arduino_PortentaBreakoutLibrary/actions/workflows/spell-check.yml)
 
 Arduino Library for the Arduino Portenta Breakout Carrier
 
