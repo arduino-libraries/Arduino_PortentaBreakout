@@ -33,6 +33,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #include <SPI.h>
 #include <PDM.h>
 #include "utility/Analog/Analog.h"
+#include "utility/UART/SwFlowSerial.h"
 
 #define LAST_ARDUINO_PIN_NUMBER LEDB + 1
 typedef enum {
@@ -252,8 +253,8 @@ public:
     BreakoutCarrierClass() : I2C_0(PH_8,PH_7),
                              I2C_1(PB_7,PB_6),
                              I2C_2(PH_12,PH_11),
-                             UART0(PA_0, PI_9, NC/*PI_10*/, NC/*PI_13*/),
-                             UART1(PA_9, PA_10, NC/*PI_14*/, NC/*PI_15*/),
+                             UART0(PA_0, PI_9, PI_10, PI_13),
+                             UART1(PA_9, PA_10, PI_14, PI_15),
                              UART2(PG_14, PG_9, NC, NC),
                              UART3(PJ_8, PJ_9, NC, NC),
                              SPI_0(PC_2, PC_3, PI_1),
