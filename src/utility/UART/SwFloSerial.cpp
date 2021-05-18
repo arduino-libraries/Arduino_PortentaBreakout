@@ -1,76 +1,79 @@
+/*
+  SwFlowSerial.cpp 
+  Part of Arduino - http://www.arduino.cc/
+
+  Copyright (c) 2018-2019 Arduino SA
+
+  This library is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 2.1 of the License, or (at your option) any later version.
+
+  This library is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General
+  Public License along with this library; if not, write to the
+  Free Software Foundation, Inc., 59 Temple Place, Suite 330,
+  Boston, MA  02111-1307  USA
+*/
+
+//#include "Arduino.h"
+//#include "pins_arduino.h"
+//#include "pinDefinitions.h"
 #include "SwFlowSerial.h"
+
+//namespace BreakoutUART {
+
+struct _mbed_serial {
+	mbed::UnbufferedSerial* obj;
+};
 
 void SW_FLOW_UART::begin(unsigned long baudrate) {
 
-	if (_serial == NULL) {
-		_serial = new mbed_serial;
-		_serial->obj = NULL;
-	}
-	if (_serial->obj == NULL) {
-		printf("New uart device\n");
-		_serial->obj = new mbed::UnbufferedSerial(_tx, _rx, baudrate);
-	} else {
-		_serial->obj->baud(baudrate);
-	}
-	if (_rts != NC) {
-		printf("Set flow control\n");
-		if(pinmap_find_peripheral(_rts, PinMap_UART_RTS) != NC) {
-            //_serial->obj->set_flow_control(mbed::SerialBase::Flow::RTSCTS, _rts, _cts);
-		} else {
+	UART::begin(baudrate);
+	if(pinmap_find_peripheral(_rts, PinMap_UART_RTS) == NC && 
+		 pinmap_find_peripheral(_cts, PinMap_UART_CTS) == NC) {
 			printf("Peripheral HW flow control not available\n");
-		    if(rts_gpio == NULL) {
-			    rts_gpio = new mbed::DigitalOut(_rts);
-			    cts_gpio = new mbed::DigitalIn(_cts);
-		    }
+		   _flowControl = new SoftwareFC(_rts, _cts);
 		}
-	}
-	if (_serial->obj != NULL) {
+
+    //Change rx interrupt attached function
+    if (_serial->obj != NULL) {
 		_serial->obj->attach(mbed::callback(this, &UART::on_rx), mbed::SerialBase::RxIrq);
 	}
 }
 
-void UART::on_rx() {
+void SW_FLOW_UART::on_rx() {
 
-	while(_serial->obj->readable()) {
-		char c;
-		_serial->obj->read(&c, 1);
-		rx_buffer.store_char(c);
-		if(rx_buffer.available() < 16) {
-			*rts_gpio = 1;//RTS HIGH
-		}
+  if(UART::availableForStore() < 16) {
+	  _flowControl->setRTS();
 	}
+	
+	UART::on_rx();
 }
 
-void UART::end() {
+int SW_FLOW_UART::read() {
 
-	if (_serial->obj != NULL) {
-		delete _serial->obj;
-		_serial->obj = NULL;
+  if(UART::availableForStore() > 16) {
+		_flowControl->clearRTS();
 	}
+	
+	return UART::read();
 }
 
-int UART::read() {
+size_t SW_FLOW_UART::write(uint8_t c) {
 
-    if(rx_buffer.available()> 16) {
-		*rts_gpio = 0;//RTS LOW
-	}
-	return rx_buffer.read_char();
+  while (_flowControl->CTS() == false) {}
+	UART::write(c);
 }
 
-size_t UART::write(uint8_t c) {
+size_t SW_FLOW_UART::write(const uint8_t* c, size_t len) {
 
-	while (!_serial->obj->writeable()) {}
-	while (*cts_gpio == 1) {/*printf("waiting cts\n");*/}
-	int ret = _serial->obj->write(&c, 1);
-	return ret == -1 ? 0 : 1;
+
 }
 
-size_t UART::write(const uint8_t* c, size_t len) {
+//}
 
-	while (!_serial->obj->writeable()) {}
-	// we need to check cts each byte
-	while (*cts_gpio == 1) {/*printf("waiting cts\n");*/}
-	_serial->obj->set_blocking(true);
-	int ret = _serial->obj->write(c, len);
-	return ret == -1 ? 0 : len;
-}
