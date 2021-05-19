@@ -23,7 +23,7 @@
 #include "Arduino.h"
 #include "pins_arduino.h"
 #include "pinDefinitions.h"
-#include "portentaBreakoutAnalog.h"
+#include "Analog.h"
 
 namespace BreakoutPWM {
 
