@@ -1,5 +1,5 @@
 /*
-  SwFlowSerial.cpp 
+  SwFlowSerial.cpp
   Part of Arduino - http://www.arduino.cc/
 
   Copyright (c) 2018-2019 Arduino SA
@@ -28,7 +28,7 @@
 //namespace BreakoutUART {
 
 struct _mbed_serial {
-	mbed::UnbufferedSerial* obj;
+    mbed::UnbufferedSerial* obj;
 };
 
 void SW_FLOW_UART::begin(unsigned long baudrate) {
@@ -38,39 +38,39 @@ void SW_FLOW_UART::begin(unsigned long baudrate) {
 
     _uart->begin(baudrate);
 
-	  if (pinmap_find_peripheral(_sw_rts, PinMap_UART_RTS) == NC || 
-		    pinmap_find_peripheral(_sw_cts, PinMap_UART_CTS) == NC) {
-			  printf("Peripheral HW flow control not available %d %d\n",_sw_rts,_sw_cts);
-		   _flowControl = new SoftwareFC(_sw_rts, _sw_cts);
-		}
+    if (pinmap_find_peripheral(_sw_rts, PinMap_UART_RTS) == NC ||
+        pinmap_find_peripheral(_sw_cts, PinMap_UART_CTS) == NC) {
+        printf("Peripheral HW flow control not available %d %d\n",_sw_rts,_sw_cts);
+        _flowControl = new SoftwareFC(_sw_rts, _sw_cts);
+    }
 
-    if(_uart->_serial->obj != NULL) {    
+    if(_uart->_serial->obj != NULL) {
         _uart->_serial->obj->attach(mbed::callback(this, &SW_FLOW_UART::on_rx), mbed::SerialBase::RxIrq);
     }
 }
 
 void SW_FLOW_UART::on_rx() {
 
-  if(_uart->availableForStore() < 16) {
-	  _flowControl->setRTS();
-	}
+    if(_uart->availableForStore() < 16) {
+        _flowControl->setRTS();
+    }
 
-  _uart->on_rx();
+    _uart->on_rx();
 }
 
 int SW_FLOW_UART::read() {
 
-  if(_uart->availableForStore() > 16) {
-		_flowControl->clearRTS();
-	}
-	
-	return _uart->read();
+    if(_uart->availableForStore() > 16) {
+        _flowControl->clearRTS();
+    }
+
+    return _uart->read();
 }
 
 size_t SW_FLOW_UART::write(uint8_t c) {
 
-  while (_flowControl->CTS() == false) {}
-	_uart->write(c);
+    while (_flowControl->CTS() == false) {}
+    _uart->write(c);
 }
 
 size_t SW_FLOW_UART::write(const uint8_t* c, size_t len) {
