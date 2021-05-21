@@ -32,42 +32,45 @@ struct _mbed_serial {
 };
 
 void SW_FLOW_UART::begin(unsigned long baudrate) {
+    if (_uart == NULL) {
+        _uart = new arduino::UART(_sw_tx, _sw_rx, _sw_rts, _sw_cts);
+    }
 
-	UART::begin(baudrate);
-	if(pinmap_find_peripheral(_rts, PinMap_UART_RTS) == NC && 
-		 pinmap_find_peripheral(_cts, PinMap_UART_CTS) == NC) {
-			printf("Peripheral HW flow control not available\n");
-		   _flowControl = new SoftwareFC(_rts, _cts);
+    _uart->begin(baudrate);
+
+	  if (pinmap_find_peripheral(_sw_rts, PinMap_UART_RTS) == NC || 
+		    pinmap_find_peripheral(_sw_cts, PinMap_UART_CTS) == NC) {
+			  printf("Peripheral HW flow control not available %d %d\n",_sw_rts,_sw_cts);
+		   _flowControl = new SoftwareFC(_sw_rts, _sw_cts);
 		}
 
-    //Change rx interrupt attached function
-    if (_serial->obj != NULL) {
-		_serial->obj->attach(mbed::callback(this, &UART::on_rx), mbed::SerialBase::RxIrq);
-	}
+    if(_uart->_serial->obj != NULL) {    
+        _uart->_serial->obj->attach(mbed::callback(this, &SW_FLOW_UART::on_rx), mbed::SerialBase::RxIrq);
+    }
 }
 
 void SW_FLOW_UART::on_rx() {
 
-  if(UART::availableForStore() < 16) {
+  if(_uart->availableForStore() < 16) {
 	  _flowControl->setRTS();
 	}
-	
-	UART::on_rx();
+
+  _uart->on_rx();
 }
 
 int SW_FLOW_UART::read() {
 
-  if(UART::availableForStore() > 16) {
+  if(_uart->availableForStore() > 16) {
 		_flowControl->clearRTS();
 	}
 	
-	return UART::read();
+	return _uart->read();
 }
 
 size_t SW_FLOW_UART::write(uint8_t c) {
 
   while (_flowControl->CTS() == false) {}
-	UART::write(c);
+	_uart->write(c);
 }
 
 size_t SW_FLOW_UART::write(const uint8_t* c, size_t len) {

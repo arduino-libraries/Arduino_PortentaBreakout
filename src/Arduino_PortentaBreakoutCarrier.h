@@ -244,7 +244,7 @@ public:
     MbedI2C I2C_0;
     MbedI2C I2C_1;
     MbedI2C I2C_2;
-    UART UART0;
+    SW_FLOW_UART UART0;
     UART UART1;
     UART UART2;
     UART UART3;
