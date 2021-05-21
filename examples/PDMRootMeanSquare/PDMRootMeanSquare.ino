@@ -18,7 +18,8 @@ static const char channels = 1;
 // default PCM output frequency
 static const int frequency = 16000;
 
-// Buffer to read samples into, each sample is 16-bits
+// Buffer to read samples into, each sample is 16-bits.
+// Size in bytes must be a power of 2, grater or equal than PDM buffer size.
 short sampleBuffer[2048];
 
 // Number of audio samples read
@@ -34,8 +35,8 @@ void setup() {
   // Configure BufferSize to 4096 bytes
   Breakout.PDM.setBufferSize(4096);
   
-  // Optionally set the gain
-  // PDM.setGain(30);
+  // Optionally set the gain, default value is 24
+  Breakout.PDM.setGain(24);
 
   // Initialize PDM with:
   // - one channel (mono mode)
@@ -48,7 +49,7 @@ void setup() {
 
 void loop() {
   // Wait for samples to be read
-  if (samplesRead) {
+  if (samplesRead == 2048) {
 
     // Compute RMS value
     double rms = RMS(sampleBuffer, samplesRead);
@@ -69,11 +70,13 @@ void onPDMdata() {
   // Query the number of available bytes
   int bytesAvailable = Breakout.PDM.available();
 
-  // Read into the sample buffer
-  Breakout.PDM.read(sampleBuffer, bytesAvailable);
+  if(samplesRead < 2048) {
+    // Read into the sample buffer
+    Breakout.PDM.read(sampleBuffer, bytesAvailable);
 
-  // 16-bit, 2 bytes per sample
-  samplesRead = bytesAvailable / 2;
+    // 16-bit, 2 bytes per sample
+    samplesRead = bytesAvailable / 2;
+  }
 }
 
 /**
