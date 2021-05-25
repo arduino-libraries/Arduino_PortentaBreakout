@@ -31,6 +31,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #include <mbed.h>
 #include <Wire.h>
 #include <SPI.h>
+#include <PDM.h>
 #include "utility/Analog/Analog.h"
 
 #define LAST_ARDUINO_PIN_NUMBER LEDB + 1
@@ -247,6 +248,7 @@ public:
     UART UART2;
     UART UART3;
     MbedSPI SPI_0;
+    PDMClass PDM;
     BreakoutCarrierClass() : I2C_0(PH_8,PH_7),
                              I2C_1(PB_7,PB_6),
                              I2C_2(PH_12,PH_11),
@@ -254,7 +256,8 @@ public:
                              UART1(PA_9, PA_10, NC/*PI_14*/, NC/*PI_15*/),
                              UART2(PG_14, PG_9, NC, NC),
                              UART3(PJ_8, PJ_9, NC, NC),
-                             SPI_0(PC_2, PC_3, PI_1)
+                             SPI_0(PC_2, PC_3, PI_1),
+                             PDM(PB_2, PE_2, NC)
     {
     }
 };
