@@ -109,7 +109,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 |               |REFN           |ANALOG_REFN    |               |               |               |
 |               |REFP           |ANALOG_REFP    |               |               |               |
 |               |A0             |ANALOG_A0      |PA_0_C         |               |               |
-|               |A1             |ANALOG_A1      |PA_1_C         |               |               |
+|               |A1             |ANALOG_A1      |PA_1_C         |               |Not available as GPIO if ETHERNET is used|
 |               |A2             |ANALOG_A2      |PC_2_C         |               |               |
 |               |A3             |ANALOG_A3      |PC_3_C         |               |               |
 |               |A4             |ANALOG_A4      |PC_2           |               |As GPIO internally connected to A2|
