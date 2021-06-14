@@ -30,7 +30,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 |PERIPHERAL     |SILK           |BREAKOUT       |uC PIN         |API            |NOTES          |
 |---------------|---------------|---------------|---------------|---------------|---------------|
-|ETHERNET       |               |               |               |TODO           |               |
+|ETHERNET       |               |               |               |Breakout.Ethernet|               |
 |               |D+             |ETHERNET_DP    |               |               |Not available as GPIO|
 |               |D-             |ETHERNET_DN    |               |               |Not available as GPIO|
 |               |GND            |               |               |               |               |
