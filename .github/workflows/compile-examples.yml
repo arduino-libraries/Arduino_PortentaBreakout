@@ -4,13 +4,13 @@ name: Compile Examples
 on:
   push:
     paths:
-      - ".github/workflows/compile-examples-private.ya?ml"
+      - ".github/workflows/compile-examples.ya?ml"
       - "library.properties"
       - "examples/**"
       - "src/**"
   pull_request:
     paths:
-      - ".github/workflows/compile-examples-private.ya?ml"
+      - ".github/workflows/compile-examples.ya?ml"
       - "library.properties"
       - "examples/**"
       - "src/**"
