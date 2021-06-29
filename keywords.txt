@@ -15,6 +15,8 @@ UART1	KEYWORD1
 UART2	KEYWORD1
 UART3	KEYWORD1
 SPI_0	KEYWORD1
+RTClock KEYWORD1
+Timestamp KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
@@ -23,6 +25,8 @@ SPI_0	KEYWORD1
 pinMode	KEYWORD2
 digitalWrite	KEYWORD2
 digitalRead	KEYWORD2
+setFromUnixTimestamp KEYWORD2
+getUnixTimestamp KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
