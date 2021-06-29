@@ -106,7 +106,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 |               |6              |GPIO_6         |PG_10          |               |               |
 |               |GND            |               |               |               |               |
 |               |GND            |               |               |               |               |
-|ANALOG         |               |               |               |Breakout.analoRead|               |
+|ANALOG         |               |               |               |Breakout.analogRead|               |
 |               |GND            |               |               |               |               |
 |               |REFN           |ANALOG_REFN    |               |               |               |
 |               |REFP           |ANALOG_REFP    |               |               |               |
