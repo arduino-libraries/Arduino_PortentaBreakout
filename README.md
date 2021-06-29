@@ -229,5 +229,5 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 |               |CLK            |SD_CLK         |PD_6           |               |               |
 |               |D1             |SD_D1          |PB_15          |               |               |
 |               |VSD            |SD_VSD         |               |               |               |
-|RTC            |               |               |               |TODO           |               |
+|RTC            |               |               |               |Breakout.RTClock|               |
 
