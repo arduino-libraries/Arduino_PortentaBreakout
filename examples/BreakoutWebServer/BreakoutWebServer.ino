@@ -90,7 +90,6 @@ void loop() {
           // output the value of each analog input pin
           for (int analogChannel = 0; analogChannel < 8; analogChannel++) {
             int sensorReading = Breakout.analogRead(analogPin[analogChannel]);
-            Serial.println(SYSCFG->PMCR);
             client.print("analog input ");
             client.print(analogChannel);
             client.print(" is ");
