@@ -8,6 +8,8 @@ Arduino Library for the Arduino Portenta Breakout Carrier
 
 For more information about this library please visit us at https://www.arduino.cc/en/Reference/Arduino_PortentaBreakoutCarrier
 
+For more information about this product please visit us at https://www.arduino.cc/pro/hardware/product/portenta-breakout
+
 ## License
 
 Copyright (c) 2021 Arduino SA. All rights reserved.
