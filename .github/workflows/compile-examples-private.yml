@@ -67,10 +67,8 @@ jobs:
 
   report-size-deltas:
     needs: build
-    if: >
-      always() && # Run even if some compilations failed.
-      github.event_name == 'pull_request' &&
-      github.event.pull_request.head.repo.full_name == github.repository  # Only run when there are write permissions.
+    # Run even if some compilations failed. Only run when there are write permissions.
+    if: always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
 
     steps:
