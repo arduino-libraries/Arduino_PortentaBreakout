@@ -1,12 +1,12 @@
 # Portenta Breakout Carrier Library for Arduino
 
-[![Check Arduino status](https://github.com/arduino-libraries/Arduino_PortentaBreakoutLibrary/actions/workflows/check-arduino.yml/badge.svg)](https://github.com/arduino-libraries/Arduino_PortentaBreakoutLibrary/actions/workflows/check-arduino.yml)
-[![Compile Examples status](https://github.com/arduino-libraries/Arduino_PortentaBreakoutLibrary/actions/workflows/compile-examples.yml/badge.svg)](https://github.com/arduino-libraries/Arduino_PortentaBreakoutLibrary/actions/workflows/compile-examples.yml)
-[![Spell Check status](https://github.com/arduino-libraries/Arduino_PortentaBreakoutLibrary/actions/workflows/spell-check.yml/badge.svg)](https://github.com/arduino-libraries/Arduino_PortentaBreakoutLibrary/actions/workflows/spell-check.yml)
+[![Check Arduino status](https://github.com/arduino-libraries/Arduino_PortentaBreakout/actions/workflows/check-arduino.yml/badge.svg)](https://github.com/arduino-libraries/Arduino_PortentaBreakout/actions/workflows/check-arduino.yml)
+[![Compile Examples status](https://github.com/arduino-libraries/Arduino_PortentaBreakout/actions/workflows/compile-examples.yml/badge.svg)](https://github.com/arduino-libraries/Arduino_PortentaBreakout/actions/workflows/compile-examples.yml)
+[![Spell Check status](https://github.com/arduino-libraries/Arduino_PortentaBreakout/actions/workflows/spell-check.yml/badge.svg)](https://github.com/arduino-libraries/Arduino_PortentaBreakout/actions/workflows/spell-check.yml)
 
 Arduino Library for the Arduino Portenta Breakout Carrier
 
-For more information about this library please visit us at https://www.arduino.cc/en/Reference/Arduino_PortentaBreakoutCarrier
+For more information about this library please visit us at https://www.arduino.cc/en/Reference/Arduino_PortentaBreakout
 
 For more information about this product please visit us at https://www.arduino.cc/pro/hardware/product/portenta-breakout
 
