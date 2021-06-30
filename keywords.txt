@@ -1,5 +1,5 @@
 #######################################
-# Syntax Coloring Map For Arduino_PortentaBreakoutCarrier
+# Syntax Coloring Map For Arduino_PortentaBreakout
 ####################################### 
 # Class (KEYWORD1)
 #######################################
