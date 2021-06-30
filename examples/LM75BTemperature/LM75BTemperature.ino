@@ -1,16 +1,16 @@
 /*
-  Breakout Carrier - LM75BTemperature
+  Portenta Breakout - LM75BTemperature
   
-  The sketch shows how to read temperature from LM75B using I2C bus of the BreakoutCarrier.
+  The sketch shows how to read temperature from LM75B using I2C bus of the Portenta Breakout.
   
   The circuit:
    - Portenta H7
-   - Breakout Carrier
+   - Portenta Breakout
   
   This example code is in the public domain.
 */
 
-#include <Arduino_PortentaBreakoutCarrier.h>
+#include <Arduino_PortentaBreakout.h>
 
 void setup() {
   Serial.begin(9600);
