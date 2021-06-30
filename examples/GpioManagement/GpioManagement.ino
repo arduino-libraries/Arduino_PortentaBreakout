@@ -1,17 +1,17 @@
 /*
-  Breakout Carrier - GPIO Management
+  Portenta Breakout - GPIO Management
 
-  The sketch shows how to use the Breakout Carrier
+  The sketch shows how to use the Portenta Breakout
   and how to turn a PIN on for one second, then off for one
   second, repeatedly.
 
   The circuit:
    - Portenta H7
-   - Portenta Breakout Carrier
+   - Portenta Breakout
 
   This example code is in the public domain.
 */
-#include <Arduino_PortentaBreakoutCarrier.h>
+#include <Arduino_PortentaBreakout.h>
 
 // The macros to access each GPIO are made using the peripheral silk name
 // and the pin name (e.g. the GPIO 0 pin can be accessed using

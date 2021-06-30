@@ -10,7 +10,7 @@
   This example code is in the public domain.
 */
 
-#include <Arduino_PortentaBreakoutCarrier.h>
+#include <Arduino_PortentaBreakout.h>
 
 // default number of output channels
 static const char channels = 1;

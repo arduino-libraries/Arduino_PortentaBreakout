@@ -1,15 +1,15 @@
 /*
-  Breakout Carrier - analogRead
+  Portenta Breakout - analogRead
 
-  The sketch shows how to use analog inputs of the Breakout Carrier.
+  The sketch shows how to use analog inputs of the Portenta Breakout.
 
   The circuit:
    - Portenta H7
-   - BreakOut Carrier
+   - Portenta Breakout
 
   This example code is in the public domain.
 */
-#include <Arduino_PortentaBreakoutCarrier.h>
+#include <Arduino_PortentaBreakout.h>
 
 const byte ANALOG_PIN_NUMBER = 8;
 const int ANALOG_RESOLUTION = 16;

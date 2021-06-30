@@ -1,16 +1,16 @@
 /*
-  Breakout Carrier - BreakoutRTCGet
+  Portenta Breakout - BreakoutRTCGet
 
-  The sketch shows how to read the RTC of the PortentaH7 using the Breakout Carrier.
+  The sketch shows how to read the RTC of the Portenta H7 using the Portenta Breakout.
 
   The circuit:
    - Portenta H7
-   - BreakOut Carrier
+   - Portenta Breakout
    - CR2032 Battery
 
   This example code is in the public domain.
 */
-#include <Arduino_PortentaBreakoutCarrier.h>
+#include <Arduino_PortentaBreakout.h>
 
 Timestamp utcTime;
 

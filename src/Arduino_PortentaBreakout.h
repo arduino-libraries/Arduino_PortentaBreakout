@@ -23,8 +23,8 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
-#ifndef ARDUINO_PORTENTA_BREAKOUT_CARRIER_H
-#define ARDUINO_PORTENTA_BREAKOUT_CARRIER_H
+#ifndef ARDUINO_PORTENTA_BREAKOUT_H
+#define ARDUINO_PORTENTA_BREAKOUT_H
 
 #include <Arduino.h>
 #include <pins_arduino.h>
@@ -271,4 +271,4 @@ public:
 
 BreakoutCarrierClass Breakout;
 
-#endif // ARDUINO_PORTENTA_BREAKOUT_CARRIER_H
+#endif // ARDUINO_PORTENTA_BREAKOUT_H

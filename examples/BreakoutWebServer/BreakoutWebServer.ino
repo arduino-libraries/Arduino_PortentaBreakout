@@ -2,10 +2,10 @@
   Web Server
 
  A simple web server that shows the value of the analog input pins.
- using PortentaBreakout.
+ using the Portenta Breakout.
 
  Circuit:
- * PortetaBreakout
+ * Portenta Breakout
 
  created 18 Dec 2009
  by David A. Mellis
@@ -16,7 +16,7 @@
  
  */
 
-#include <Arduino_PortentaBreakoutCarrier.h>
+#include <Arduino_PortentaBreakout.h>
 
 // Enter a MAC address and IP address for your controller below.
 // The IP address will be dependent on your local network:
