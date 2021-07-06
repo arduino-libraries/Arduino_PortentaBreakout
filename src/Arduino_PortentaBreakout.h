@@ -34,7 +34,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #include <PDM.h>
 #include <Portenta_Ethernet.h>
 #include <Ethernet.h>
-#include "utility/Analog/Analog.h"
 #include "utility/RTC/RTC.h"
 
 #define LAST_ARDUINO_PIN_NUMBER LEDB + 1
@@ -198,12 +197,12 @@ public:
     }
     void analogWrite(breakoutPin pin, int val) {
         if (pin > -1) {
-            BreakoutPWM::analogWrite((int)pin, val);
+            ::analogWrite((int)pin, val);
         }
         return;
     }
     void analogWriteResolution(int bits) {
-        BreakoutPWM::analogWriteResolution(bits);
+        ::analogWriteResolution(bits);
     }
     int analogRead(breakoutPin pin) {
         if (pin > -1) {
