@@ -31,7 +31,7 @@ IPAddress ip(192, 168, 1, 177);
 EthernetServer server(80);
 
 // PortentaBreakout analogPin table
-breakoutPin analogPin[] = {ANALOG_A0, ANALOG_A0, ANALOG_A2, ANALOG_A3, 
+breakoutPin analogPin[] = {ANALOG_A0, ANALOG_A1, ANALOG_A2, ANALOG_A3,
                            ANALOG_A4, ANALOG_A5, ANALOG_A6, ANALOG_A7};
 
 void setup() {
