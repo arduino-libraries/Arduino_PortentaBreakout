@@ -36,6 +36,9 @@ jobs:
           - fqbn: arduino:mbed_portenta:envie_m7
             platforms: |
               - name: arduino:mbed_portenta
+          - fqbn: arduino:mbed_portenta:portenta_x8
+            platforms: |
+              - name: arduino:mbed_portenta
 
     steps:
       - name: Checkout repository
