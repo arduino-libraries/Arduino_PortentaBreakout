@@ -268,6 +268,6 @@ public:
     }
 };
 
-BreakoutCarrierClass Breakout;
+extern BreakoutCarrierClass Breakout;
 
 #endif // ARDUINO_PORTENTA_BREAKOUT_H
