@@ -262,7 +262,7 @@ public:
                              UART3(PJ_8, PJ_9, NC, NC),
                              SPI_0(PC_2, PC_3, PI_1),
                              PDM(PB_2, PE_2, NC),
-                             Ethernet(),
+                             Ethernet(static_cast<EthernetInterface*>(EthInterface::get_default_instance())),
                              RTClock()
     {
     }
